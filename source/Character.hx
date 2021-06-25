@@ -158,26 +158,7 @@ class Character extends FlxSprite
 				addOffset("singDOWN", -50, -130);
 
 				playAnim('danceRight');
-			case 'mom':
-				tex = Paths.getSparrowAtlas('characters/Mom_Assets');
-				frames = tex;
-
-				animation.addByPrefix('idle', "Mom Idle", 24, false);
-				animation.addByPrefix('singUP', "Mom Up Pose", 24, false);
-				animation.addByPrefix('singDOWN', "MOM DOWN POSE", 24, false);
-				animation.addByPrefix('singLEFT', 'Mom Left Pose', 24, false);
-				// ANIMATION IS CALLED MOM LEFT POSE BUT ITS FOR THE RIGHT
-				// CUZ DAVE IS DUMB!
-				animation.addByPrefix('singRIGHT', 'Mom Pose Left', 24, false);
-
-				addOffset('idle');
-				addOffset("singUP", 14, 71);
-				addOffset("singRIGHT", 10, -60);
-				addOffset("singLEFT", 250, -23);
-				addOffset("singDOWN", 20, -160);
-
-				playAnim('idle');
-
+		
 			case 'mom-car':
 				tex = Paths.getSparrowAtlas('characters/momCar');
 				frames = tex;
@@ -498,6 +479,29 @@ class Character extends FlxSprite
 				addOffset("singDOWN-alt", -30, -27);
 
 				playAnim('idle');
+
+
+
+
+
+				case 'tankman':
+					
+					tex = Paths.getSparrowAtlas('characters/Tank', 'shared');
+					frames = tex;
+					animation.addByPrefix('idle', 'Tankman Idle Dance instance', 24);
+					animation.addByPrefix('singUP', 'Tankman UP note instance', 24);
+					animation.addByPrefix('singRIGHT', 'Tankman Right Note instance', 24);
+					animation.addByPrefix('singDOWN', 'Tankman DOWN note instance', 24);
+					animation.addByPrefix('singLEFT', 'Tankman Note Left instance', 24);
+	
+					
+				addOffset('idle');
+				addOffset("singUP", -29, 27);
+				addOffset("singRIGHT", -68, -7);
+				addOffset("singLEFT", 65, 9);
+				addOffset("singDOWN", 200, -70);
+				flipX = true;
+	
 		}
 
 		dance();
@@ -507,6 +511,7 @@ class Character extends FlxSprite
 			flipX = !flipX;
 
 			// Doesn't flip for BF, since his are already in the right place???
+			//THEN WHY IN THE FUCK IS IT THERE????????? AAAAAAA
 			if (!curCharacter.startsWith('bf'))
 			{
 				// var animArray
