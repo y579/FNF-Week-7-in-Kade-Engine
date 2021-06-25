@@ -141,20 +141,20 @@
 <SubTexture name="SENPAI idle Black Lines0011" x="6556" y="2762" width="336" height="288"/>
 <SubTexture name="SENPAI idle Black Lines0012" x="6556" y="2762" width="336" height="288"/>
 <SubTexture name="SENPAI idle Black Lines0013" x="6556" y="2762" width="336" height="288"/>
-<SubTexture name="Tankman Menu BLACK0000" x="7676" y="2762" width="228" height="292" frameX="-3" frameY="-9" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0001" x="7676" y="2762" width="228" height="292" frameX="-3" frameY="-9" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0002" x="3753" y="2050" width="229" height="293" frameX="-2" frameY="-8" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0003" x="3753" y="2050" width="229" height="293" frameX="-2" frameY="-8" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0004" x="1131" y="1732" width="228" height="295" frameX="-1" frameY="-6" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0005" x="1131" y="1732" width="228" height="295" frameX="-1" frameY="-6" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0006" x="1131" y="1427" width="229" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0007" x="1410" y="786" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0008" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0009" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0010" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0011" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0012" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
-<SubTexture name="Tankman Menu BLACK0013" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0000" x="7676" y="2762" width="228" height="292" frameX="-3" frameY="-9" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0001" x="7676" y="2762" width="228" height="292" frameX="-3" frameY="-9" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0002" x="3753" y="2050" width="229" height="293" frameX="-2" frameY="-8" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0003" x="3753" y="2050" width="229" height="293" frameX="-2" frameY="-8" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0004" x="1131" y="1732" width="228" height="295" frameX="-1" frameY="-6" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0005" x="1131" y="1732" width="228" height="295" frameX="-1" frameY="-6" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0006" x="1131" y="1427" width="229" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0007" x="1410" y="786" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0008" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0009" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0010" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0011" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0012" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
+<SubTexture name="Tankman Menu0013" x="1410" y="1091" width="230" height="301" frameX="0" frameY="0" frameWidth="231" frameHeight="301"/>
 <SubTexture name="spooky dance idle BLACK LINES0000" x="4506" y="2043" width="381" height="549" frameX="-50" frameY="0" frameWidth="492" frameHeight="549"/>
 <SubTexture name="spooky dance idle BLACK LINES0001" x="4506" y="2043" width="381" height="549" frameX="-50" frameY="0" frameWidth="492" frameHeight="549"/>
 <SubTexture name="spooky dance idle BLACK LINES0002" x="1833" y="2189" width="379" height="541" frameX="-55" frameY="-8" frameWidth="492" frameHeight="549"/>
