@@ -26,11 +26,9 @@ class FreeplayState extends MusicBeatState
 	var curDifficulty:Int = 1;
 
 	var scoreText:FlxText;
-	var comboText:FlxText;
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
 	var intendedScore:Int = 0;
-	var combo:String = '';
 
 	private var grpSongs:FlxTypedGroup<Alphabet>;
 	private var curPlaying:Bool = false;
@@ -108,10 +106,6 @@ class FreeplayState extends MusicBeatState
 		diffText.font = scoreText.font;
 		add(diffText);
 
-		comboText = new FlxText(diffText.x + 100, diffText.y, 0, "", 24);
-		comboText.font = diffText.font;
-		add(comboText);
-
 		add(scoreText);
 
 		changeSelection();
@@ -182,7 +176,6 @@ class FreeplayState extends MusicBeatState
 			lerpScore = intendedScore;
 
 		scoreText.text = "PERSONAL BEST:" + lerpScore;
-		comboText.text = combo + '\n';
 
 		var upP = controls.UP_P;
 		var downP = controls.DOWN_P;
@@ -209,20 +202,27 @@ class FreeplayState extends MusicBeatState
 
 		if (accepted)
 		{
-			// adjusting the song name to be compatible
-			var songFormat = StringTools.replace(songs[curSelected].songName, " ", "-");
-			switch (songFormat) {
-				case 'Dad-Battle': songFormat = 'Dadbattle';
-				case 'Philly-Nice': songFormat = 'Philly';
+			// pre lowercasing the song name (update)
+			var songLowercase = StringTools.replace(songs[curSelected].songName, " ", "-").toLowerCase();
+			switch (songLowercase) {
+				case 'dad-battle': songLowercase = 'dadbattle';
+				case 'philly-nice': songLowercase = 'philly';
+			}
+			// adjusting the highscore song name to be compatible (update)
+			// would read original scores if we didn't change packages
+			var songHighscore = StringTools.replace(songs[curSelected].songName, " ", "-");
+			switch (songHighscore) {
+				case 'Dad-Battle': songHighscore = 'Dadbattle';
+				case 'Philly-Nice': songHighscore = 'Philly';
 			}
 			
-			trace(songs[curSelected].songName);
+			trace(songLowercase);
 
-			var poop:String = Highscore.formatSong(songFormat, curDifficulty);
+			var poop:String = Highscore.formatSong(songHighscore, curDifficulty);
 
 			trace(poop);
 			
-			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName);
+			PlayState.SONG = Song.loadFromJson(poop, songLowercase);
 			PlayState.isStoryMode = false;
 			PlayState.storyDifficulty = curDifficulty;
 			PlayState.storyWeek = songs[curSelected].week;
@@ -249,10 +249,17 @@ class FreeplayState extends MusicBeatState
 		
 		#if !switch
 		intendedScore = Highscore.getScore(songHighscore, curDifficulty);
-		combo = Highscore.getCombo(songHighscore, curDifficulty);
 		#end
 
-		diffText.text = CoolUtil.difficultyFromInt(curDifficulty).toUpperCase();
+		switch (curDifficulty)
+		{
+			case 0:
+				diffText.text = "EASY";
+			case 1:
+				diffText.text = 'NORMAL';
+			case 2:
+				diffText.text = "HARD";
+		}
 	}
 
 	function changeSelection(change:Int = 0)
@@ -283,7 +290,6 @@ class FreeplayState extends MusicBeatState
 
 		#if !switch
 		intendedScore = Highscore.getScore(songHighscore, curDifficulty);
-		combo = Highscore.getCombo(songHighscore, curDifficulty);
 		// lerpScore = 0;
 		#end
 

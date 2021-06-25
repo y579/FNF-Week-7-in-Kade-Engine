@@ -37,7 +37,7 @@ class Note extends FlxSprite
 
 	public var rating:String = "shit";
 
-	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false, ?inCharter:Bool = false)
+	public function new(strumTime:Float, noteData:Int, ?prevNote:Note, ?sustainNote:Bool = false)
 	{
 		super();
 
@@ -50,10 +50,7 @@ class Note extends FlxSprite
 		x += 50;
 		// MAKE SURE ITS DEFINITELY OFF SCREEN?
 		y -= 2000;
-		if (inCharter)
-			this.strumTime = strumTime;
-		else 
-			this.strumTime = Math.round(strumTime);
+		this.strumTime = strumTime;
 
 		if (this.strumTime < 0 )
 			this.strumTime = 0;
@@ -62,14 +59,7 @@ class Note extends FlxSprite
 
 		var daStage:String = PlayState.curStage;
 
-		//defaults if no noteStyle was found in chart
-		var noteTypeCheck:String = 'normal';
-
-		if (PlayState.SONG.noteStyle == null) {
-			switch(PlayState.storyWeek) {case 6: noteTypeCheck = 'pixel';}
-		} else {noteTypeCheck = PlayState.SONG.noteStyle;}
-
-		switch (noteTypeCheck)
+		switch (PlayState.SONG.noteStyle)
 		{
 			case 'pixel':
 				loadGraphic(Paths.image('weeb/pixelUI/arrows-pixels','week6'), true, 17, 17);
@@ -98,6 +88,60 @@ class Note extends FlxSprite
 				updateHitbox();
 			default:
 				frames = Paths.getSparrowAtlas('NOTE_assets');
+
+				animation.addByPrefix('greenScroll', 'green0');
+				animation.addByPrefix('redScroll', 'red0');
+				animation.addByPrefix('blueScroll', 'blue0');
+				animation.addByPrefix('purpleScroll', 'purple0');
+
+				animation.addByPrefix('purpleholdend', 'pruple end hold');
+				animation.addByPrefix('greenholdend', 'green hold end');
+				animation.addByPrefix('redholdend', 'red hold end');
+				animation.addByPrefix('blueholdend', 'blue hold end');
+
+				animation.addByPrefix('purplehold', 'purple hold piece');
+				animation.addByPrefix('greenhold', 'green hold piece');
+				animation.addByPrefix('redhold', 'red hold piece');
+				animation.addByPrefix('bluehold', 'blue hold piece');
+
+				setGraphicSize(Std.int(width * 0.7));
+				updateHitbox();
+				antialiasing = true;
+
+
+
+
+
+				case "cj":
+				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
+				updateHitbox();
+				frames = Paths.getSparrowAtlas('cj','new notes');
+
+				animation.addByPrefix('greenScroll', 'green0');
+				animation.addByPrefix('redScroll', 'red0');
+				animation.addByPrefix('blueScroll', 'blue0');
+				animation.addByPrefix('purpleScroll', 'purple0');
+
+				animation.addByPrefix('purpleholdend', 'pruple end hold');
+				animation.addByPrefix('greenholdend', 'green hold end');
+				animation.addByPrefix('redholdend', 'red hold end');
+				animation.addByPrefix('blueholdend', 'blue hold end');
+
+				animation.addByPrefix('purplehold', 'purple hold piece');
+				animation.addByPrefix('greenhold', 'green hold piece');
+				animation.addByPrefix('redhold', 'red hold piece');
+				animation.addByPrefix('bluehold', 'blue hold piece');
+
+				setGraphicSize(Std.int(width * 0.7));
+				updateHitbox();
+				antialiasing = true;
+
+
+
+						case "prism":
+				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
+				updateHitbox();
+				frames = Paths.getSparrowAtlas('prism' ,'new notes');
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');

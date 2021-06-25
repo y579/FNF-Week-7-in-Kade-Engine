@@ -236,12 +236,6 @@ class KeyBindMenu extends FlxSubState
                     return;
             }
 
-        if (r.contains("NUMPAD"))
-        {
-            keys[curSelected] = null;
-            return;
-        }
-
         if(shouldReturn){
             keys[curSelected] = r;
             FlxG.sound.play(Paths.sound('scrollMenu'));
