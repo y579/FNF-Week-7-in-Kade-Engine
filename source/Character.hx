@@ -495,11 +495,11 @@ class Character extends FlxSprite
 					animation.addByPrefix('singLEFT', 'Tankman Note Left instance', 24);
 	
 					
-				addOffset('idle');
-				addOffset("singUP", -29, 27);
-				addOffset("singRIGHT", -68, -7);
-				addOffset("singLEFT", 65, 9);
-				addOffset("singDOWN", 200, -70);
+					addOffset('idle');
+					addOffset("singUP", -29, 27);
+					addOffset("singRIGHT", -68, -7);
+					addOffset("singLEFT", 65, 9);
+					addOffset("singDOWN", 200, -70);
 				flipX = true;
 	
 		}
