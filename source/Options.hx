@@ -162,7 +162,7 @@ class GhostTapOption extends Option
 }
 class Midscroll extends Option
 {
-	
+ //null
 }
 class AccuracyOption extends Option
 {
