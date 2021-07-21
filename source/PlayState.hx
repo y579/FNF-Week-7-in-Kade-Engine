@@ -161,7 +161,7 @@ class PlayState extends MusicBeatState
 	var phillyCityLights:FlxTypedGroup<FlxSprite>;
 	var phillyTrain:FlxSprite;
 	var trainSound:FlxSound;
-
+	var Switch character
 	var limo:FlxSprite;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
 	var fastCar:FlxSprite;
@@ -3420,6 +3420,11 @@ class PlayState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
+		if (curSong.toLowerCase() == 'ugh' && curStep == 70)
+		{
+			dad.playAnim('ugh', true);
+		}
+			
 
 		if (generatedMusic)
 		{
