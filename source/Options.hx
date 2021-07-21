@@ -160,7 +160,10 @@ class GhostTapOption extends Option
 		return FlxG.save.data.ghost ? "Ghost Tapping" : "No Ghost Tapping";
 	}
 }
-
+class Midscroll extends Option
+{
+ //null
+}
 class AccuracyOption extends Option
 {
 	public function new(desc:String)

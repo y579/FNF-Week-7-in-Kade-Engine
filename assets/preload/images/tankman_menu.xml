@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="tankman_menu.png"><SubTexture name="tankman idle0000" x="0" y="0" width="284" height="349" frameX="0" frameY="0" frameWidth="284" frameHeight="349" />
+<SubTexture name="tankman idle black0001" x="284" y="0" width="284" height="349" frameX="0" frameY="0" frameWidth="284" frameHeight="349" />
+<SubTexture name="tankman idle black0002" x="568" y="0" width="278" height="316" frameX="0" frameY="0" frameWidth="278" frameHeight="316" />
+<SubTexture name="tankman idle black0003" x="846" y="0" width="274" height="374" frameX="0" frameY="0" frameWidth="274" frameHeight="374" />
+<SubTexture name="tankman idle black0004" x="0" y="374" width="246" height="312" frameX="0" frameY="0" frameWidth="246" frameHeight="312" />
+</TextureAtlas>

@@ -493,15 +493,20 @@ class Character extends FlxSprite
 					animation.addByPrefix('singLEFT', 'Tankman Right Note instance', 24);
 					animation.addByPrefix('singDOWN', 'Tankman DOWN note instance', 24);
 					animation.addByPrefix('singRIGHT', 'Tankman Note Left instance', 24);
+					animation.addByPrefix('good', 'PRETTY GOOD tankman instance', 24);
+					animation.addByPrefix('ugh', 'TANKMAN UGH instance', 24);
 	
 					
-					addOffset('idle');
-					addOffset("singUP", -29, 27);
-					addOffset("singRIGHT", -68, -7);
-					addOffset("singLEFT", 65, 9);
-					addOffset("singDOWN", 200, -70);
-				flipX = true;
+					addOffset('idle', 0, 0);
+					addOffset("singUP", 24, 56);
+					addOffset("singRIGHT", -1, -7);
+					addOffset("singLEFT", 100, -14);
+					addOffset("singDOWN", 98, -90);
+					addOffset("good", 98, 90); 
+					addOffset("ugh", 24, 56); 
 
+				playAnim('idle');
+				flipX = true;
 			
 		}
 
