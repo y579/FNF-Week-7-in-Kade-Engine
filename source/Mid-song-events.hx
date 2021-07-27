@@ -33,3 +33,10 @@ import flixel.addons.effects.chainable.FlxEffectSprite;
 import flixel.addons.effects.chainable.FlxWaveEffect;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.graphics.atlas.FlxAtlas;
+=======
+import PlayState;
+
+class Midsongevents extends PlayState
+{
+  
+}
