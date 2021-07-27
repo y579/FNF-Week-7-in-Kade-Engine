@@ -26,7 +26,6 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
-			new MidScroll("What else do i say?"),
 			new DownscrollOption("Change the layout of the strumline."),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
@@ -37,7 +36,8 @@ class OptionsMenu extends MusicBeatState
 			new AccuracyDOption("Change how accuracy is calculated. (Accurate = Simple, Complex = Milisecond Based)"),
 			new ResetButtonOption("Toggle pressing R to gameover."),
 			// new OffsetMenu("Get a note offset based off of your inputs!"),
-			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference")
+			new CustomizeGameplay("Drag'n'Drop Gameplay Modules around to your preference"),
+			new Midscroll("What else do i say?")
 		]),
 		new OptionCategory("Appearance", [
 			#if desktop
@@ -50,7 +50,6 @@ class OptionsMenu extends MusicBeatState
 			#else
 			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay.")
 			#end
-			new Miscroll("mmhm.")
 		]),
 		
 		new OptionCategory("Misc", [

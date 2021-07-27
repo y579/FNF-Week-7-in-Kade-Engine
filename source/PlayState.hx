@@ -1,39 +1,18 @@
 package;
 
-import flixel.input.keyboard.FlxKey;
-import haxe.Exception;
-import openfl.geom.Matrix;
-import openfl.display.BitmapData;
-import openfl.utils.AssetType;
-import lime.graphics.Image;
-import flixel.graphics.FlxGraphic;
-import openfl.utils.AssetManifest;
-import openfl.utils.AssetLibrary;
-import flixel.system.FlxAssets;
 
-import lime.app.Application;
-import lime.media.AudioContext;
-import lime.media.AudioManager;
 import openfl.Lib;
 import Section.SwagSection;
 import Song.SwagSong;
-import WiggleEffect.WiggleEffectType;
 import flixel.FlxBasic;
 import flixel.FlxCamera;
 import flixel.FlxG;
-import flixel.FlxGame;
 import flixel.FlxObject;
 import flixel.FlxSprite;
-import flixel.FlxState;
 import flixel.FlxSubState;
-import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.effects.FlxTrail;
-import flixel.addons.effects.FlxTrailArea;
-import flixel.addons.effects.chainable.FlxEffectSprite;
 import flixel.addons.effects.chainable.FlxWaveEffect;
 import flixel.addons.transition.FlxTransitionableState;
-import flixel.graphics.atlas.FlxAtlas;
-import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
@@ -42,17 +21,11 @@ import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import PlayState;
 import flixel.ui.FlxBar;
-import flixel.util.FlxCollision;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
-import flixel.util.FlxStringUtil;
 import flixel.util.FlxTimer;
-import haxe.Json;
-import lime.utils.Assets;
-import openfl.display.BlendMode;
-import openfl.display.StageQuality;
-import openfl.filters.ShaderFilter;
 
 #if windows
 import Discord.DiscordClient;
@@ -161,7 +134,6 @@ class PlayState extends MusicBeatState
 	var phillyCityLights:FlxTypedGroup<FlxSprite>;
 	var phillyTrain:FlxSprite;
 	var trainSound:FlxSound;
-	var Switch character
 	var limo:FlxSprite;
 	var grpLimoDancers:FlxTypedGroup<BackgroundDancer>;
 	var fastCar:FlxSprite;
@@ -242,7 +214,11 @@ class PlayState extends MusicBeatState
 				case 'dad-battle': songLowercase = 'dadbattle';
 				case 'philly-nice': songLowercase = 'philly';
 			}
-		
+		if (FlxG.save.data.midscroll = true)
+		{
+		var ExecutemidModchart = (Paths.lua('lua stuff'  + "/the-one-that-makes-midscroll-work"));
+		ExecutemidModchart;
+	}
 		#if windows
 		executeModchart = FileSystem.exists(Paths.lua(songLowercase  + "/modchart"));
 		#end
@@ -541,6 +517,16 @@ class PlayState extends MusicBeatState
 						evilSnow.antialiasing = true;
 					add(evilSnow);
 					}
+
+					case 'V O I D':
+				{
+						curStage = 'V O I D';
+						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('tankGround'));
+						bg.antialiasing = true;
+						bg.scrollFactor.set(0, 0);
+						bg.active = false;
+						add(bg);
+				}
 			case 'school':
 			{
 					curStage = 'school';
@@ -854,7 +840,6 @@ class PlayState extends MusicBeatState
 		
 		strumLine = new FlxSprite(0, 50).makeGraphic(FlxG.width, 10);
 		strumLine.scrollFactor.set();
-		
 		if (FlxG.save.data.downscroll)
 			strumLine.y = FlxG.height - 165;
 
@@ -1878,9 +1863,9 @@ class PlayState extends MusicBeatState
 			iconP2.animation.curAnim.curFrame = 0;
 
 		/* if (FlxG.keys.justPressed.NINE)
-			FlxG.switchState(new Charting()); */
+			FlxG.switchState(new ChartingSubState()); /****/
 
-		#if debug
+		
 		if (FlxG.keys.justPressed.EIGHT)
 		{
 			FlxG.switchState(new AnimationDebug(SONG.player2));
@@ -1890,8 +1875,12 @@ class PlayState extends MusicBeatState
 				luaModchart.die();
 				luaModchart = null;
 			}
-			#end
-		}
+				if (FlxG.keys.justPressed.ESCAPE)
+					{
+						FlxG.switchState(new PlayState());
+					}
+					
+			}
 
 		if (FlxG.keys.justPressed.ZERO)
 		{
@@ -2637,7 +2626,7 @@ class PlayState extends MusicBeatState
 						totalNotesHit += 1;
 					sicks++;
 			}
-
+ 
 			// trace('Wife accuracy loss: ' + wife + ' | Rating: ' + daRating + ' | Score: ' + score + ' | Weight: ' + (1 - wife));
 
 			if (daRating != 'shit' || daRating != 'bad')
@@ -3420,11 +3409,11 @@ class PlayState extends MusicBeatState
 	override function beatHit()
 	{
 		super.beatHit();
-		if (curSong.toLowerCase() == 'ugh' && curStep == 70)
+		if (curSong.toLowerCase() == 'ugh' && curStep == 60)
 		{
 			dad.playAnim('ugh', true);
 		}
-			
+			//if (curSong.toLowerCase() == 'guns' && curStep ==)
 
 		if (generatedMusic)
 		{

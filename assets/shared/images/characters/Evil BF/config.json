@@ -1,0 +1,37 @@
+{
+	"clone": "bf",
+	"sing_duration": 4,
+	"scale": 1,
+	"scale_pixel": 0.91,
+	"pixel_offset_scale": 0.91,
+	"online_offset_scale": 0.7,
+
+	"voices": "bf",
+	"flip_x": true,
+
+	"animations":
+	[
+		{
+			"anim": "hey",
+			"name": "BF NOTE DOWN",
+			"fps": 24,
+			"loop": false,
+			"indices": []
+		}
+	],
+	"hey_anim": "hey",
+	"scared_anim": "",
+	"animations_offsets":
+	[
+		{
+			"anim": "hey",
+			"player1": [-5, 5],
+			"player2": [-40, 5]
+		}
+	],
+
+	"common_stage_offset": [0, 0, 0, 0],
+	"pixel_stage_offset": [0, 0, 0, 0],
+	"local_multiplayer_offset": [0, 0],
+	"online_offset": [0, 0]
+}

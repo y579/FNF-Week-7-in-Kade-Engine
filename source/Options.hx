@@ -7,7 +7,6 @@ import Controls.KeyboardScheme;
 import flixel.FlxG;
 import openfl.display.FPS;
 import openfl.Lib;
-
 class OptionCategory
 {
 	private var _options:Array<Option> = new Array<Option>();
@@ -15,7 +14,6 @@ class OptionCategory
 	{
 		return _options;
 	}
-
 	public final function addOption(opt:Option)
 	{
 		_options.push(opt);
@@ -162,7 +160,23 @@ class GhostTapOption extends Option
 }
 class Midscroll extends Option
 {
- //null
+	
+	public function new(desc:String)
+		{
+			super();
+			description = desc;
+		}
+		public override function press():Bool
+		{
+			FlxG.save.data.midscroll = !FlxG.save.data.midscroll;
+			display = updateDisplay();
+			return true;
+		}
+		private override function updateDisplay():String
+			{
+				return FlxG.save.data.midscroll ? "Midscroll" : "Normal";
+			}
+
 }
 class AccuracyOption extends Option
 {
