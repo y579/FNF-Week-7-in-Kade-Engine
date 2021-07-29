@@ -73,7 +73,10 @@ class Option
 }
 
 
+class Midscroll extends Option
+{
 
+}
 class DFJKOption extends Option
 {
 	private var controls:Controls;
