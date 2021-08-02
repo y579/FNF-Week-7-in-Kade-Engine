@@ -214,20 +214,27 @@ class PlayState extends MusicBeatState
 				case 'dad-battle': songLowercase = 'dadbattle';
 				case 'philly-nice': songLowercase = 'philly';
 			}
-		if (FlxG.save.data.midscroll = true)
-		{
-		var ExecutemidModchart = (Paths.lua('lua stuff'  + "/the-one-that-makes-midscroll-work"));
-		ExecutemidModchart;
-	}
 		#if windows
-		executeModchart = FileSystem.exists(Paths.lua(songLowercase  + "/modchart"));
+		if (_camsave.data.modcharts)
+			if (_camsave.data.cmode)
+				executeModchart = FileSystem.exists(Paths.lua(songLowercase + "/modchart-c"));
+			else
+				executeModchart = FileSystem.exists(Paths.lua(songLowercase + "/modchart"));
 		#end
+
 		#if !cpp
 		executeModchart = false; // FORCE disable for non cpp targets
 		#end
-
-		trace('Mod chart: ' + executeModchart + " - " + Paths.lua(songLowercase + "/modchart"));
-
+	
+			if (!_camsave.data.cmode)
+			{
+				trace('Mod chart: ' + executeModchart + " - " + Paths.lua(songLowercase + "/modchart"));
+			}
+			else
+			{
+				trace('Mod chart: ' + executeModchart + " - " + Paths.lua(songLowercase + "/modchart-c"));
+			}
+		}
 		#if windows
 		// Making difficulty text for Discord Rich Presence.
 		switch (storyDifficulty)
