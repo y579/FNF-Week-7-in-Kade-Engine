@@ -529,7 +529,7 @@ class PlayState extends MusicBeatState
 					case 'V O I D':
 				{
 						curStage = 'V O I D';
-						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('tankGround'));
+						var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('urmom/tankGround'));
 						bg.antialiasing = true;
 						bg.scrollFactor.set(0, 0);
 						bg.active = false;
