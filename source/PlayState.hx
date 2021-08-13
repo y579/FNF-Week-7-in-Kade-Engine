@@ -215,11 +215,12 @@ class PlayState extends MusicBeatState
 				case 'philly-nice': songLowercase = 'philly';
 			}
 		#if windows
-		if (_camsave.data.modcharts)
+			if (_camsave.data.modcharts)
 			if (_camsave.data.cmode)
 				executeModchart = FileSystem.exists(Paths.lua(songLowercase + "/modchart-c"));
 			else
 				executeModchart = FileSystem.exists(Paths.lua(songLowercase + "/modchart"));
+		//hey stupid (me) heres ur answer g: if (condition) expression1 else expression2;
 		#end
 
 		#if !cpp
