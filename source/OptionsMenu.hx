@@ -26,7 +26,6 @@ class OptionsMenu extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory("Gameplay", [
 			new DFJKOption(controls),
-			new MidScroll("What else do i say?"),
 			new DownscrollOption("Change the layout of the strumline."),
 			new GhostTapOption("Ghost Tapping is when you tap a direction and it doesn't give you a miss."),
 			new Judgement("Customize your Hit Timings (LEFT or RIGHT)"),
@@ -48,7 +47,7 @@ class OptionsMenu extends MusicBeatState
 			new SongPositionOption("Show the songs current position (as a bar)"),
 			new CpuStrums("CPU's strumline lights up when a note hits it."),
 			#else
-			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay.")
+			new DistractionsAndEffectsOption("Toggle stage distractions that can hinder your gameplay."),
 			#end
 			new Midscroll("mmhm.")
 		]),
